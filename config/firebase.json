@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stackoverflow-clone-8cbff",
+  "private_key_id": "09d794e66ff7536550149b7622207cb178276f25",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC6K2xXe0tcYbiO\n+/dZj6kpBv7aKPR2atxuUZmIhH/Ei2bdnvHYLymlSh/cksqMnxn4H9i923K/F5XC\nuUB+MHKk2MOVDq1NaJ/8czYLfVvSms29mceuMLHKxPp+Cl79gKUnJwBAnCn+oaBW\nF+iVnsl88BX4LD/b1dH0JwIEjLIQbEdbc7KEjttwtcZw/tYQOiRDCfdZf4eC8TR7\nbDuwKZ/jcU8ePnQ7wlhPP8EajhEdsreJcDBgFb0ahgtSgzgOnOwO3vQEMxJb/XRe\nTUdEifZHj7x4tu6Hz+c+6zB3YuJfSmPw1Ju45w/r8kwjklPfIGAFWYxDEMMC7cLG\nsKKW/cSpAgMBAAECggEAAwqeA79+tdI84h24ssRhDln2CThG/pk7tCI1Qd5R665N\nyu+8cHL/6dNn/Gf+yYwL8nk5rwa9GdInLAiouFoDIG7ztUQ0Neft/QreOEKJuI2t\nvmVm7zvxuGM+JtoR0er5smvGTnKVNK8Iccrjf3mtBNXU2Lgofv8QhJzIYnPdnfly\n8FJd/aL4YDGu+Y3aCzO1sdI8G0hkHFgOMq05xKNQO+2ebnEll/vISImle9AMlfKn\nOXoxeGRSXPLWaYm7h5JsLIwkjkAYTsHdygPv0uD7Q1gskVBvBjqIgcN1/KN4qJ5H\n4/568a5g66tZaOoENuympumqgxjItwixyAQtiPM2VwKBgQD8F+YARPPJxkS3EP+a\n4gQp2xZMVvQJzmX3sMW9SkvWEkWKWal6EmujHlCO/1D1ay9x1eLpc3PCugWHpdFq\nO4iIi0bDi4oqmbnbvKOrv1lAA/JwdhWbroluax0XILv5MWPn/W8jrSShP+AQEUFo\n8F+LAA4z1lBAi1x0gZwbZb2A0wKBgQC9Df4zrhDM30gcj8YxA8oyGHIyAPpf2acx\ndWYVPpzJ02J0PkqSyUtzWVviJFR1O1lLs2Yal0eeBSCCanXfEHSZLUZW8XG0K76x\n1OQPuy0FTSz8TxRh2v9InQPIhpaN8imBTx4L0uRQ2BkvXgffhMoHLAgz+8OtHC64\nssQBfNTXEwKBgQC03MSEDvRFID1uhgCMc3l/OhMOZBgj7PPVN/s2alZsWKGRt/BS\nh2K4Hei4H09LNEJOzqBE0zMLUwDiqEHNkLbNF/eGFdfj5nSkxPs8HkV/GxXWP7IT\nBq7NDIZLcI3MI/ZEm9wf4Xn1QmmTvX2LN2GkzT5jTHA5ToLfh5mjQmQqRwKBgQCy\nAxQBe3wsPG39Hs/CZUwlIWmdddhLGnlYk698f4lIbPb+d4zmbA3UXiaraAPyouBw\n7EpO7XUs8Kzsv+ufDzKK7NuXkB69RJd5gPkBawB4RnP+W0PY5EmOCPKABWKL46J7\nNJEZFwmOqfwE4uhM6g8E88wBjqVwQeIoXYM711vd6wKBgQCrZdZvmSZuEf7MG3a+\nMiWUDJ/wuT5N0WiLfNfN+XjxU4NZjAwWrfBDTXrcA/TdYsuFU0+P/ygD1DYlxu9K\n6NjZ1BhjxPgQYwfY6aWbEaIPhIdVJXYNKQAWSgFpqIKEBXMBg1KM5uPXBPetqgxT\nAEJmox0xjTmanVuiwOUaWdCkPg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ftvbg@stackoverflow-clone-8cbff.iam.gserviceaccount.com",
+  "client_id": "116285525416643814472",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ftvbg%40stackoverflow-clone-8cbff.iam.gserviceaccount.com"
+}
