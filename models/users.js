@@ -16,6 +16,24 @@ class Users {
         return newUser.key;
     }
 
+    async validateUser(data) {
+        const dataToValidate = {...data}
+        const userQuery = await this.collection
+            .orderByChild('email')
+            .equalTo(dataToValidate.email)
+            .once('value')
+
+        const userFound = userQuery.val();
+        if(userFound) {
+            const userId = Object.keys(userFound)[0]
+            const passwordRight = await bcrypt.compare(dataToValidate.password, userFound[userId].password);
+            const result = (passwordRight) ? userFound[userId] : false;
+
+            return result;
+        }
+        return false;
+    }
+
     static async encrypt(password){
         const saltRounds = 10;
         const hashPassword = await bcrypt.hash(password, saltRounds)
