@@ -25,6 +25,12 @@ const init = async () => {
     await server.register(vision);
 
     server.method('setAnswerRight', methods.setAnswerRight)
+    server.method('getLast', methods.getLast, {
+        cache: {
+            expiresIn: 1000 * 60,
+            generateTimeout: 2000
+        }
+    })
 
     // cookies
     server.state('user', {

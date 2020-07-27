@@ -10,6 +10,12 @@ let routes = [
     {
         method: 'GET',
         path: '/', 
+        options: {
+            cache: {
+                expiresIn: 1000 * 30,
+                privacy: 'private'
+            }
+        },
         handler: site.home
     },
 
@@ -101,6 +107,11 @@ let routes = [
         },
         path: '/answer-question', 
         handler: question.answerQuestion
+    },
+    {
+        method: 'GET',
+        path: '/answer/{questionId}/{answerId}', 
+        handler: question.setAnswerRight
     },
 
     {
