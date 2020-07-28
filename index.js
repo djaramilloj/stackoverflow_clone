@@ -4,6 +4,9 @@ const Hapi = require('hapi');
 const handlebars = require('./lib/helpers');
 const inert = require('inert');
 const path = require('path');
+const crumb = require('crumb');
+const scooter = require('scooter');
+const blankie = require('blankie');
 const good = require('good');
 const methods = require('./lib/methods');
 const vision = require('vision');
@@ -35,6 +38,31 @@ const init = async () => {
                     'stdout'
                 ]
             }
+        }
+    })
+    await server.register({
+        plugin: crumb,
+        options: {
+            cookieOptions: {
+                isSecure: process.env.NODE_ENV === 'prod'
+            }
+        }
+    })
+    // FIX THIS
+    // await server.register([scooter, {
+    //     plugin: blankie,
+    //     options: {
+    //       defaultSrc: `'self' 'unsafe-inline'`,
+    //       styleSrc: `'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com`,
+    //       fontSrc: `'self' 'unsafe-inline' data:`,
+    //       scriptSrc: `'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com/ https://code.jquery.com/`,
+    //       generateNonces: false
+    //     }
+    //   }])
+    await server.register({
+        plugin: require('./lib/api'),
+        options: {
+            prefix: 'api'
         }
     })
 
@@ -74,12 +102,12 @@ const init = async () => {
 
 // BUENA PRACTICA
 process.on('unhandledRejection', (err) => {
-    server.log('unhandledRejection', err)
+    // server.log('unhandledRejection', err)
     process.exit(1);
 });
 
 process.on('unhandledException', (err) => {
-    server.log('unhandledException', err)
+    // server.log('unhandledException', err)
     process.exit(1);
 });
 
