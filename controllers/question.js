@@ -3,7 +3,7 @@ const questions = require('../models/index').questions;
 const { writeFile } = require('fs');
 const { promisify } = require('util');
 const { join } = require('path');
-const uuid = require('uuid/dist/v1');
+const uuid = require('uuid');
 
 const write  = promisify(writeFile);
 
@@ -13,15 +13,17 @@ async function createQuestion(request, h) {
     }
     let result, filename
     try {
-        if(Buffer.isBuffer(request.payload.image)) {
-            filename = `${uuid()}.png`
+        const buffer = Buffer.from(request.payload.image)
+        if(Buffer.isBuffer(buffer)) {
+            // check this
+            filename = `${uuid.v1()}.png`
             await write(join(__dirname, '..', 'public', 'uploads', filename), request.payload.image)
         }
 
         result = await questions.create(request.payload, request.state.user, filename)
-        console.log('pregunta creada con el id: ' + result)
+        request.log('info', 'pregunta creada con el id: ' + result)
     } catch (error) {
-        console.error('ocurrio un error: '+ error)
+        request.log('error', 'ocurrio un error: '+ error)
         return h.view('ask', {
             title: 'crear pregunta',
             error: 'error registrando la pregunta'

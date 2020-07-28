@@ -86,7 +86,9 @@ let routes = [
                 payload: {
                     title: joi.string().required(),
                     description: joi.string().required(),
-                    image: joi.any().optional()
+                    image: joi.any().optional(),
+                    multipart: true,
+                    parse: true
                 },
                 failAction : user.failValidation
             }

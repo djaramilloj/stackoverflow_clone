@@ -4,7 +4,8 @@ const Hapi = require('hapi');
 const handlebars = require('./lib/helpers');
 const inert = require('inert');
 const path = require('path');
-const methods = require('./lib/methods')
+const good = require('good');
+const methods = require('./lib/methods');
 const vision = require('vision');
 const routes = require('./routes');
 const site = require('./controllers/site');
@@ -23,6 +24,19 @@ const init = async () => {
 
     await server.register(inert);
     await server.register(vision);
+    await server.register({
+        plugin: good,
+        options: {
+            reporters: {
+                console: [
+                    {
+                        module: 'good-console'
+                    },
+                    'stdout'
+                ]
+            }
+        }
+    })
 
     server.method('setAnswerRight', methods.setAnswerRight)
     server.method('getLast', methods.getLast, {
@@ -55,17 +69,17 @@ const init = async () => {
     server.route(routes);
 
     await server.start();
-    console.log(`Server running on ${server.info.uri}`);
+    server.log('info', `Server running on ${server.info.uri}`)
 };
 
 // BUENA PRACTICA
 process.on('unhandledRejection', (err) => {
-    console.error(`unhandled rejection: ${err.message}`, err);
+    server.log('unhandledRejection', err)
     process.exit(1);
 });
 
 process.on('unhandledException', (err) => {
-    console.error(`unhandled exception: ${err.message}`, err);
+    server.log('unhandledException', err)
     process.exit(1);
 });
 
