@@ -5,6 +5,13 @@
         <p>{{question.description}}</p>
         <p class="mb-0">Creada por <strong>{{question.owner.name}}</strong></p>
       </div>
+      {{#with question.filename}}
+            <p class="text-center">
+                <img src="/assets/uploads/{{this}}/" style="max-width: 80%" alt="">
+            </p>
+            <hr>
+            
+        {{/with}}
       {{#each question.answers as |answer key|}}
       <div class="alert {{#if answer.correct}}alert-success{{else}}alert-info{{/if }}" role="alert">
         <p>{{answer.text}}</p>

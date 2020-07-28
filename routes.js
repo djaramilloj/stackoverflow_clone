@@ -32,7 +32,7 @@ let routes = [
                 payload: {
                     name: joi.string().required().min(3),
                     email: joi.string().email().required(),
-                    password: joi.string().required().min(6)
+                    password: joi.string().required().min(6),
                 },
                 failAction : user.failValidation
             }
@@ -85,7 +85,8 @@ let routes = [
             validate: {
                 payload: {
                     title: joi.string().required(),
-                    description: joi.string().required()
+                    description: joi.string().required(),
+                    image: joi.any().optional()
                 },
                 failAction : user.failValidation
             }
